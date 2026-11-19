@@ -1,0 +1,1181 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!-- BCA Sem III Study Guide v2 -->
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>BCA Sem III Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #f7f8fc;
+  --surface: #ffffff;
+  --surface2: #eef1f8;
+  --fg: #1a1d2e;
+  --fg2: #4b5068;
+  --accent: #3b5bdb;
+  --accent-soft: #dde5ff;
+  --amber: #e67700;
+  --amber-soft: #fff3cd;
+  --green: #2f9e44;
+  --green-soft: #d3f9d8;
+  --red: #c92a2a;
+  --red-soft: #ffe3e3;
+  --teal: #0c8599;
+  --teal-soft: #c5f6fa;
+  --border: #d8dce8;
+  --radius: 10px;
+  --font-head: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1117; --surface: #1a1d2e; --surface2: #242838;
+    --fg: #e8eaf6; --fg2: #9ba3c2;
+    --accent: #748ffc; --accent-soft: #1e2a5e;
+    --amber: #ffd43b; --amber-soft: #2d2200;
+    --green: #69db7c; --green-soft: #0d2e14;
+    --red: #ff8787; --red-soft: #2e0d0d;
+    --teal: #3bc9db; --teal-soft: #0a2d33;
+    --border: #2e3350; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1117; --surface: #1a1d2e; --surface2: #242838;
+  --fg: #e8eaf6; --fg2: #9ba3c2;
+  --accent: #748ffc; --accent-soft: #1e2a5e;
+  --amber: #ffd43b; --amber-soft: #2d2200;
+  --green: #69db7c; --green-soft: #0d2e14;
+  --red: #ff8787; --red-soft: #2e0d0d;
+  --teal: #3bc9db; --teal-soft: #0a2d33;
+  --border: #2e3350; color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--fg);font-size:15px;line-height:1.6;}
+
+.site-header{background:var(--accent);color:#fff;padding:20px max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
+.site-header h1{font-family:var(--font-head);font-size:clamp(1.2rem,4vw,1.7rem);font-weight:700;margin:0 0 4px;letter-spacing:-0.3px;}
+.site-header p{margin:0;font-size:.875rem;opacity:.85;}
+.header-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.badge{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 10px;font-size:.75rem;font-weight:600;letter-spacing:.02em;}
+
+.tab-nav-wrap{position:sticky;top:0;z-index:10;background:var(--surface);border-bottom:2px solid var(--border);overflow-x:auto;scrollbar-width:none;}
+.tab-nav-wrap::-webkit-scrollbar{display:none;}
+.tab-nav{display:flex;padding:0 max(16px,env(safe-area-inset-left,0px));gap:2px;min-width:max-content;}
+.tab-btn{background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;padding:12px 14px;font-family:var(--font-head);font-size:.8rem;font-weight:600;color:var(--fg2);cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s;}
+.tab-btn:hover{color:var(--accent);}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+
+.main{max-width:860px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-left,0px)) 56px;padding-right:max(16px,env(safe-area-inset-right,0px));}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* Subject header */
+.subject-header{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px;display:flex;gap:14px;align-items:flex-start;}
+.subject-icon{width:48px;height:48px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+.subject-meta h2{font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin:0 0 4px;}
+.subject-meta p{margin:0;font-size:.875rem;color:var(--fg2);}
+.meta-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.chip{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:2px 10px;font-size:.72rem;font-weight:600;color:var(--fg2);letter-spacing:.03em;}
+.chip.a{background:var(--accent-soft);color:var(--accent);border-color:var(--accent-soft);}
+.chip.g{background:var(--green-soft);color:var(--green);border-color:var(--green-soft);}
+.chip.r{background:var(--red-soft);color:var(--red);border-color:var(--red-soft);}
+
+/* Topic sections */
+.topic-unit{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;}
+.topic-unit-head{padding:12px 16px;display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;}
+.topic-unit-head:hover{background:var(--surface2);}
+.unit-num{background:var(--accent);color:#fff;font-family:var(--font-head);font-weight:700;font-size:.75rem;min-width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-variant-numeric:tabular-nums;}
+.unit-title{font-family:var(--font-head);font-weight:600;font-size:.95rem;flex:1;min-width:0;}
+.unit-badge{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:12px;flex-shrink:0;}
+.hot{background:var(--red-soft);color:var(--red);}
+.sure{background:var(--green-soft);color:var(--green);}
+.medium{background:var(--amber-soft);color:var(--amber);}
+.arrow{font-size:.85rem;color:var(--fg2);transition:transform .2s;flex-shrink:0;}
+.topic-unit.open .arrow{transform:rotate(90deg);}
+.topic-unit-body{display:none;padding:4px 16px 16px;border-top:1px solid var(--border);}
+.topic-unit.open .topic-unit-body{display:block;}
+
+.topic-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:10px;}
+.topic-list li{font-size:.875rem;color:var(--fg);padding:7px 12px;background:var(--surface2);border-radius:7px;border-left:3px solid var(--border);}
+.topic-list li strong{color:var(--accent);font-weight:600;}
+.topic-list li.imp{border-left-color:var(--red);}
+.topic-list li.mid{border-left-color:var(--amber);}
+.topic-list li.ok{border-left-color:var(--green);}
+
+.section-label{font-family:var(--font-head);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin:20px 0 10px;}
+
+.resource-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.resource-item{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;display:flex;align-items:flex-start;gap:12px;}
+.resource-rank{background:var(--accent);color:#fff;font-family:var(--font-head);font-weight:700;font-size:.75rem;min-width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-variant-numeric:tabular-nums;}
+.resource-info{min-width:0;}
+.resource-info strong{display:block;font-family:var(--font-head);font-weight:600;font-size:.9rem;margin-bottom:2px;}
+.resource-info span{font-size:.8rem;color:var(--fg2);}
+.rtag{display:inline-block;border-radius:4px;padding:1px 6px;font-size:.7rem;font-weight:700;margin-left:5px;vertical-align:middle;}
+.rtag.free{background:var(--green-soft);color:var(--green);}
+.rtag.yt{background:var(--red-soft);color:var(--red);}
+.rtag.book{background:var(--amber-soft);color:var(--amber);}
+
+.tips-box{background:var(--accent-soft);border:1px solid var(--accent);border-radius:var(--radius);padding:16px 18px;margin-top:20px;}
+.tips-box h4{font-family:var(--font-head);font-weight:700;font-size:.85rem;color:var(--accent);margin:0 0 8px;text-transform:uppercase;letter-spacing:.05em;}
+.tips-box ul{margin:0;padding-left:18px;font-size:.875rem;color:var(--fg);}
+.tips-box ul li{margin-bottom:6px;}
+.tips-box ul li:last-child{margin-bottom:0;}
+
+h3.sh{font-family:var(--font-head);font-size:1rem;font-weight:700;margin:24px 0 12px;color:var(--fg);display:flex;align-items:center;gap:8px;}
+h3.sh::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* Legend */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:.75rem;color:var(--fg2);}
+.legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+
+/* Strategy */
+.priority-box{border-radius:var(--radius);padding:16px 20px;margin-bottom:14px;border-left:4px solid;}
+.priority-box.high{background:var(--red-soft);border-color:var(--red);}
+.priority-box.medium{background:var(--amber-soft);border-color:var(--amber);}
+.priority-box.low{background:var(--green-soft);border-color:var(--green);}
+.priority-box h4{font-family:var(--font-head);font-size:.85rem;font-weight:700;margin:0 0 8px;text-transform:uppercase;letter-spacing:.06em;}
+.priority-box.high h4{color:var(--red);}
+.priority-box.medium h4{color:var(--amber);}
+.priority-box.low h4{color:var(--green);}
+.priority-box p{margin:0;font-size:.875rem;color:var(--fg);}
+
+.strat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:20px;}
+.strat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;}
+.strat-card h3{font-family:var(--font-head);font-size:.9rem;font-weight:700;margin:0 0 10px;}
+.strat-card ul{margin:0;padding-left:16px;font-size:.85rem;color:var(--fg2);}
+.strat-card ul li{margin-bottom:5px;}
+
+.timetable-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);}
+.timetable{width:100%;border-collapse:collapse;font-size:.875rem;}
+.timetable th{background:var(--accent);color:#fff;font-family:var(--font-head);font-weight:600;text-align:left;padding:10px 12px;font-size:.8rem;letter-spacing:.03em;}
+.timetable td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--fg2);vertical-align:top;}
+.timetable tr:nth-child(even) td{background:var(--surface2);}
+.timetable td:first-child{font-family:var(--font-head);font-weight:600;color:var(--fg);white-space:nowrap;font-variant-numeric:tabular-nums;}
+
+/* Competitive */
+.comp-banner{background:linear-gradient(135deg,var(--accent) 0%,#5c7cfa 100%);color:#fff;border-radius:var(--radius);padding:20px;margin-bottom:20px;}
+.comp-banner h2{font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin:0 0 8px;}
+.comp-banner p{margin:0 0 12px;font-size:.875rem;opacity:.9;}
+.comp-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.comp-tag{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:3px 10px;font-size:.75rem;font-weight:600;}
+</style>
+
+<div class="site-header">
+  <h1>📚 BCA Sem III — Zero to Exam</h1>
+  <p>CCSU University · Deep Topic Coverage + Resources + Strategy</p>
+  <div class="header-badges">
+    <span class="badge">6 Subjects</span>
+    <span class="badge">Group C (Web Prog)</span>
+    <span class="badge">CCSU Pattern</span>
+    <span class="badge">+ Competitive Tips</span>
+  </div>
+</div>
+
+<div class="tab-nav-wrap">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('strategy')">🗺 Strategy</button>
+    <button class="tab-btn" onclick="showTab('stats')">📊 Prob & Stats</button>
+    <button class="tab-btn" onclick="showTab('dbms')">🗄 DBMS</button>
+    <button class="tab-btn" onclick="showTab('se')">⚙️ Soft. Engg</button>
+    <button class="tab-btn" onclick="showTab('python')">🐍 Python</button>
+    <button class="tab-btn" onclick="showTab('web')">🌐 Web Prog</button>
+    <button class="tab-btn" onclick="showTab('comp')">🏆 Competitive</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ===== STRATEGY ===== -->
+<div class="tab-panel active" id="panel-strategy">
+  <h3 class="sh">🚨 Priority Map</h3>
+  <div class="priority-box high">
+    <h4>🔴 Top Priority</h4>
+    <p><strong>DBMS (5 credits) + Python (4 credits)</strong> = 9 of 20 credits. Spend 40% of your total prep time here. DBMS theory + SQL queries are non-negotiable. Python programs must be practiced by hand.</p>
+  </div>
+  <div class="priority-box medium">
+    <h4>🟡 Medium Priority</h4>
+    <p><strong>Probability & Statistics + Software Engineering</strong> — Mostly definitions, derivations, and diagrams. 2–3 focused days each is enough with PYQ practice.</p>
+  </div>
+  <div class="priority-box low">
+    <h4>🟢 Lower Effort Needed</h4>
+    <p><strong>Web Programming-I</strong> — Very scoring if you practice hands-on HTML/CSS/JS. Build one complete webpage and you cover 80% of practical. Yoga = practical only, no written exam.</p>
+  </div>
+
+  <h3 class="sh">🗓 Daily Timetable</h3>
+  <div class="timetable-wrap">
+    <table class="timetable">
+      <thead><tr><th>Time</th><th>Activity</th><th>Duration</th></tr></thead>
+      <tbody>
+        <tr><td>6:00–7:30 AM</td><td>🏆 Competitive Exam (Quant/Reasoning — fresh brain)</td><td>1.5 hrs</td></tr>
+        <tr><td>8:00–10:00 AM</td><td>📚 DBMS or Python (alternating days)</td><td>2 hrs</td></tr>
+        <tr><td>10:15 AM–12:00 PM</td><td>📖 Stats or Software Engineering</td><td>1.75 hrs</td></tr>
+        <tr><td>1:30–3:00 PM</td><td>🌐 Web Programming-I</td><td>1.5 hrs</td></tr>
+        <tr><td>3:00–4:00 PM</td><td>🏆 Competitive (GK / Current Affairs)</td><td>1 hr</td></tr>
+        <tr><td>4:00–5:00 PM</td><td>📝 CCSU Previous Year Paper practice</td><td>1 hr</td></tr>
+        <tr><td>Evening</td><td>YouTube lecture revision + cheat sheet writing</td><td>1–2 hrs</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sh">💡 CCSU Exam Tips</h3>
+  <div class="strat-grid">
+    <div class="strat-card">
+      <h3>📝 CCSU Paper Style</h3>
+      <ul>
+        <li>Short (2 marks), Medium (5 marks), Long (10 marks) sections</li>
+        <li>Textbook definitions carry full marks — learn word-for-word</li>
+        <li>Diagrams (ER, DFD, UML, SDLC) = easy marks, always draw them</li>
+        <li>Last 5 PYQs = your actual syllabus in practice</li>
+      </ul>
+    </div>
+    <div class="strat-card">
+      <h3>⚡ Crash Strategy</h3>
+      <ul>
+        <li>YouTube lecture → take notes → solve PYQs</li>
+        <li>Don't read full books — use chapter summaries + GFG</li>
+        <li>Make 1-page cheat sheets per subject</li>
+        <li>Attempt every question — no negative marking in CCSU</li>
+      </ul>
+    </div>
+    <div class="strat-card">
+      <h3>🔗 Free Resources</h3>
+      <ul>
+        <li><strong>Notes:</strong> Telegram "BCA CCSU" / "BCA Meerut" groups</li>
+        <li><strong>PYQs:</strong> CCSUniversity.ac.in exam portal</li>
+        <li><strong>YouTube:</strong> Gate Smashers, CodeWithHarry</li>
+        <li><strong>Theory:</strong> GeeksforGeeks, Javatpoint, Tutorialspoint</li>
+      </ul>
+    </div>
+    <div class="strat-card">
+      <h3>🔄 Competitive Overlap</h3>
+      <ul>
+        <li>Stats formulas → Quant aptitude section</li>
+        <li>DBMS/SQL → Govt IT Officer exams</li>
+        <li>Web basics → Computer Awareness MCQs</li>
+        <li>Python syntax → IT competitive MCQs</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROBABILITY & STATS ===== -->
+<div class="tab-panel" id="panel-stats">
+  <div class="subject-header">
+    <div class="subject-icon">📊</div>
+    <div class="subject-meta">
+      <h2>Probability & Statistics</h2>
+      <p>BCA 3001T · Theory Only · 3 Credits</p>
+      <div class="meta-row">
+        <span class="chip a">3 Credits</span>
+        <span class="chip">Theory Only</span>
+        <span class="chip r">Formula Heavy</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> Exam mein zaroor aata hai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div> Aksar aata hai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Kabhi kabhi aata hai</div>
+  </div>
+
+  <div class="topic-unit open">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">1</div>
+      <div class="unit-title">Probability — Basics & Theorems</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Sample Space & Events:</strong> Sample space (S), Event (subset of S), Types — Simple, Compound, Mutually Exclusive, Exhaustive, Equally Likely, Independent events — definitions + examples</li>
+        <li class="imp"><strong>Classical Definition:</strong> P(A) = favourable outcomes / total outcomes. Limitations of classical definition.</li>
+        <li class="imp"><strong>Addition Theorem:</strong> P(A∪B) = P(A) + P(B) - P(A∩B). For mutually exclusive: P(A∪B) = P(A) + P(B). Proof + example both required.</li>
+        <li class="imp"><strong>Multiplication Theorem:</strong> P(A∩B) = P(A) × P(B|A). For independent events: P(A∩B) = P(A) × P(B).</li>
+        <li class="imp"><strong>Conditional Probability:</strong> P(A|B) = P(A∩B) / P(B). Full formula + numerical example.</li>
+        <li class="imp"><strong>Bayes' Theorem:</strong> Formula, proof, complete numerical problem — this is a 10-mark question every year.</li>
+        <li class="mid"><strong>Statistical (Empirical) Definition:</strong> P(A) = lim(n→∞) f/n. Comparison with classical.</li>
+        <li class="ok"><strong>Axiomatic Definition:</strong> Kolmogorov's axioms — 3 axioms only, brief.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">2</div>
+      <div class="unit-title">Random Variables & Probability Distributions</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Random Variable:</strong> Definition — discrete (countable values) vs continuous (range of values). Examples of each.</li>
+        <li class="imp"><strong>PMF & PDF:</strong> Probability Mass Function for discrete, Probability Density Function for continuous — properties, examples.</li>
+        <li class="imp"><strong>CDF:</strong> Cumulative Distribution Function F(x) = P(X ≤ x). Properties: non-decreasing, 0 to 1.</li>
+        <li class="imp"><strong>Mathematical Expectation:</strong> E(X) = Σ x·P(x). Properties: E(aX+b) = aE(X)+b, E(X+Y) = E(X)+E(Y).</li>
+        <li class="imp"><strong>Variance:</strong> Var(X) = E(X²) – [E(X)]². Standard Deviation = √Var(X). Numerical problems on E(X) and Var(X).</li>
+        <li class="mid"><strong>Moments:</strong> Raw moments μ'r = E(Xr), Central moments μr — first 4 moments.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">3</div>
+      <div class="unit-title">Binomial, Poisson & Normal Distributions</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Binomial Distribution:</strong> P(X=r) = ⁿCᵣ pʳ qⁿ⁻ʳ. Mean = np, Variance = npq. Conditions for binomial. Derivation + 2 numericals.</li>
+        <li class="imp"><strong>Poisson Distribution:</strong> P(X=r) = e⁻λ λʳ/r!. Mean = Variance = λ. "Poisson as limiting case of Binomial" — this proof is a CCSU favourite.</li>
+        <li class="imp"><strong>Normal Distribution:</strong> Bell curve properties — symmetric, mean=median=mode, area under curve. Standard Normal Z = (X-μ)/σ. Z-table usage for finding probabilities.</li>
+        <li class="mid"><strong>Normal as limit of Binomial:</strong> When n→∞, Binomial → Normal. Brief derivation.</li>
+        <li class="ok"><strong>Fitting Binomial/Poisson:</strong> Given data, fit a theoretical distribution — numerical.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">4</div>
+      <div class="unit-title">Central Tendency & Dispersion</div>
+      <span class="unit-badge medium">Important</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Mean:</strong> Arithmetic Mean (AM) for raw/grouped data. Weighted Mean. Geometric Mean (GM) = (x₁·x₂…xₙ)^(1/n). Harmonic Mean (HM). Relationship: AM ≥ GM ≥ HM.</li>
+        <li class="imp"><strong>Median:</strong> For raw data (middle value) and grouped data (M = L + [(n/2 - cf)/f] × h). Quartiles Q1, Q3.</li>
+        <li class="imp"><strong>Mode:</strong> For raw data (most frequent) and grouped data (Z = L + [f₁-f₀/2f₁-f₀-f₂] × h).</li>
+        <li class="imp"><strong>Standard Deviation & Variance:</strong> σ² = Σ(xᵢ-x̄)²/n for population; s² = Σ(xᵢ-x̄)²/(n-1) for sample. Numerical calculation must be practiced.</li>
+        <li class="mid"><strong>Range, Mean Deviation:</strong> Range = Max - Min. MD from mean and from median. Coefficient of MD.</li>
+        <li class="mid"><strong>Coefficient of Variation:</strong> CV = (σ/x̄) × 100. Used to compare variability of two datasets.</li>
+        <li class="ok"><strong>Skewness & Kurtosis:</strong> Positive/Negative skew, Karl Pearson's coefficient of skewness. Kurtosis types (mesokurtic, leptokurtic, platykurtic) — definitions only.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">5</div>
+      <div class="unit-title">Correlation & Regression</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Correlation:</strong> Definition, types (positive/negative/zero, perfect/partial). Scatter diagram interpretation.</li>
+        <li class="imp"><strong>Karl Pearson's r:</strong> r = Σ[(x-x̄)(y-ȳ)] / √[Σ(x-x̄)² × Σ(y-ȳ)²]. Properties: -1 ≤ r ≤ +1. Full numerical calculation guaranteed in exam.</li>
+        <li class="imp"><strong>Spearman's Rank Correlation:</strong> rₛ = 1 - [6ΣD²/n(n²-1)]. For tied ranks formula. Numerical problem must be practiced.</li>
+        <li class="imp"><strong>Regression Lines:</strong> Y on X: (y-ȳ) = byx(x-x̄). X on Y: (x-x̄) = bxy(y-ȳ). Two regression lines, regression coefficients byx and bxy.</li>
+        <li class="imp"><strong>Relationship:</strong> r² = byx × bxy. This property appears in every CCSU paper.</li>
+        <li class="mid"><strong>Standard Error of Estimate:</strong> Measuring accuracy of regression prediction.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">6</div>
+      <div class="unit-title">Sampling & Hypothesis Testing</div>
+      <span class="unit-badge medium">Important</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="mid"><strong>Sampling:</strong> Population vs Sample. Types — Random, Stratified, Systematic, Cluster. Sampling vs Census.</li>
+        <li class="mid"><strong>Hypothesis Testing:</strong> Null Hypothesis H₀, Alternative Hypothesis H₁. Type I Error (α) and Type II Error (β).</li>
+        <li class="mid"><strong>t-test:</strong> One sample t-test for mean. t = (x̄ - μ) / (s/√n). Degrees of freedom.</li>
+        <li class="mid"><strong>Chi-Square Test:</strong> χ² = Σ[(O-E)²/E]. Test of independence, goodness of fit. Contingency table.</li>
+        <li class="ok"><strong>Z-test:</strong> For large samples (n > 30). Z = (x̄ - μ) / (σ/√n).</li>
+        <li class="ok"><strong>F-test / ANOVA:</strong> Brief intro — comparing variances.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">🏆 Resources</h3>
+  <ul class="resource-list">
+    <li class="resource-item"><div class="resource-rank">1</div><div class="resource-info"><strong>Gate Smashers — Probability & Stats <span class="rtag yt">YouTube</span><span class="rtag free">FREE</span></strong><span>Search "Gate Smashers Engineering Maths Probability". Short Hindi videos, covers every topic above. Watch at 1.5x speed.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">2</div><div class="resource-info"><strong>Khan Academy — Statistics <span class="rtag free">FREE</span></strong><span>khanacademy.org → Statistics & Probability. Best for understanding Normal distribution, Z-scores visually.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">3</div><div class="resource-info"><strong>Javatpoint Statistics Notes <span class="rtag free">FREE</span></strong><span>javatpoint.com/statistics — chapter-wise, formula-rich notes. Perfect for making revision cheat sheets.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">4</div><div class="resource-info"><strong>CCSU PYQ Papers <span class="rtag free">FREE</span></strong><span>Bayes Theorem, Binomial/Poisson numericals, Correlation coefficient calculation — these repeat every year.</span></div></li>
+  </ul>
+  <div class="tips-box">
+    <h4>⚡ Quick Wins</h4>
+    <ul>
+      <li>Bayes Theorem full proof + 1 numerical = guaranteed 10 marks</li>
+      <li>Poisson as limiting case of Binomial = favourite derivation</li>
+      <li>Correlation coefficient (r) full calculation — always in paper</li>
+      <li>Relationship: r² = byx × bxy — write in every regression answer</li>
+      <li>This subject overlaps 100% with competitive exam quant prep!</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== DBMS ===== -->
+<div class="tab-panel" id="panel-dbms">
+  <div class="subject-header">
+    <div class="subject-icon">🗄</div>
+    <div class="subject-meta">
+      <h2>Database Management Systems</h2>
+      <p>BCA 3002T + BCA 3002P · Theory + Practical · 5 Credits</p>
+      <div class="meta-row">
+        <span class="chip r">5 Credits — HIGHEST!</span>
+        <span class="chip">Theory + Lab</span>
+        <span class="chip a">SQL Must</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> Exam mein zaroor aata hai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div> Aksar aata hai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Kabhi kabhi aata hai</div>
+  </div>
+
+  <div class="topic-unit open">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">1</div>
+      <div class="unit-title">Introduction to DBMS</div>
+      <span class="unit-badge medium">Important</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Data vs Information:</strong> Data = raw facts. Information = processed meaningful data. Examples needed.</li>
+        <li class="imp"><strong>Database & DBMS:</strong> Database = organized collection of related data. DBMS = software that manages database. Characteristics of DBMS.</li>
+        <li class="imp"><strong>File System vs DBMS:</strong> CCSU favourite comparison — Redundancy, Inconsistency, Atomicity, Concurrency issues in File System. Table format answer.</li>
+        <li class="imp"><strong>DBMS Architecture:</strong> 1-tier (direct), 2-tier (client-server), 3-tier (client-app server-DB server). Diagram for each. ANSI/SPARC 3-level architecture (External, Conceptual, Internal) — very important.</li>
+        <li class="mid"><strong>Data Abstraction:</strong> Physical level, Logical level, View level. Data Independence — Physical and Logical.</li>
+        <li class="mid"><strong>Schema and Instance:</strong> Schema = structure of database (doesn't change). Instance = data at a point in time (changes).</li>
+        <li class="mid"><strong>Database Users:</strong> DBA (rights and duties), Application Programmer, Naive User, Sophisticated User.</li>
+        <li class="ok"><strong>Data Models:</strong> Hierarchical, Network, Relational, Object-Oriented — brief comparison. CCSU mostly focuses on Relational.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">2</div>
+      <div class="unit-title">ER Model & Relational Model</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Entity & Entity Types:</strong> Strong Entity vs Weak Entity. Entity Set.</li>
+        <li class="imp"><strong>Attributes:</strong> Simple, Composite, Single-valued, Multivalued, Derived, Key attribute — definitions + ER symbols for each.</li>
+        <li class="imp"><strong>Relationships:</strong> Relationship type, Relationship set. Degree (unary, binary, ternary). Cardinality Ratios: 1:1, 1:N, M:N with examples.</li>
+        <li class="imp"><strong>Participation Constraints:</strong> Total participation (double line) vs Partial participation (single line) in ER diagram.</li>
+        <li class="imp"><strong>ER Diagram:</strong> Drawing complete ER diagram for a given problem (Library, Bank, Hospital, University) — 100% exam question. Know all symbols: rectangle=entity, ellipse=attribute, diamond=relation, line=link.</li>
+        <li class="imp"><strong>Converting ER to Relational Schema:</strong> Rules for 1:1, 1:N, M:N relationships. Mapping weak entities. This is a 10-mark question.</li>
+        <li class="imp"><strong>Relational Model:</strong> Relation (table), Tuple (row), Attribute (column), Domain, Degree (number of attributes), Cardinality (number of tuples).</li>
+        <li class="imp"><strong>Keys:</strong> Super Key, Candidate Key, Primary Key, Alternate Key, Foreign Key — definitions + examples. Key differences in table format.</li>
+        <li class="mid"><strong>Integrity Constraints:</strong> Entity Integrity (PK ≠ NULL), Referential Integrity (FK must match PK or be NULL), Domain Constraint.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">3</div>
+      <div class="unit-title">Relational Algebra</div>
+      <span class="unit-badge medium">Important</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>SELECT (σ):</strong> σ condition(R). Filters rows. Example: σ age>25(Employee).</li>
+        <li class="imp"><strong>PROJECT (π):</strong> π col1,col2(R). Filters columns. Example: π name,salary(Employee).</li>
+        <li class="imp"><strong>RENAME (ρ):</strong> ρ new_name(R). Renames relation.</li>
+        <li class="imp"><strong>Set Operations:</strong> UNION (∪), INTERSECTION (∩), SET DIFFERENCE (−) — compatibility conditions (same degree, compatible domains).</li>
+        <li class="imp"><strong>CARTESIAN PRODUCT (×):</strong> R × S. All combinations. Degree = degree(R) + degree(S), Cardinality = |R| × |S|.</li>
+        <li class="imp"><strong>JOIN Types:</strong> Natural Join (⋈), Theta Join, Equi Join, Left/Right/Full Outer Join. Difference between them. JOIN vs CARTESIAN PRODUCT.</li>
+        <li class="mid"><strong>Division (÷):</strong> R ÷ S. Used for "for all" type queries.</li>
+        <li class="ok"><strong>Extended RA:</strong> Aggregate functions in RA — Generalized Projection, Aggregate functions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">4</div>
+      <div class="unit-title">SQL — Full Coverage</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>DDL:</strong> CREATE TABLE (with constraints), ALTER TABLE (ADD/MODIFY/DROP column), DROP TABLE, TRUNCATE TABLE. Difference between DROP and TRUNCATE.</li>
+        <li class="imp"><strong>DML:</strong> INSERT INTO, UPDATE SET WHERE, DELETE FROM WHERE, SELECT (all forms).</li>
+        <li class="imp"><strong>SELECT Clauses:</strong> WHERE, ORDER BY (ASC/DESC), GROUP BY, HAVING, DISTINCT, LIMIT. Know when to use GROUP BY vs WHERE.</li>
+        <li class="imp"><strong>Aggregate Functions:</strong> COUNT(*), SUM(col), AVG(col), MAX(col), MIN(col). Use with GROUP BY. HAVING vs WHERE — key difference.</li>
+        <li class="imp"><strong>SQL JOINs:</strong> INNER JOIN, LEFT OUTER JOIN, RIGHT OUTER JOIN, FULL OUTER JOIN, SELF JOIN, CROSS JOIN — syntax + example query for each.</li>
+        <li class="imp"><strong>Subqueries:</strong> Single-row subquery, Multi-row subquery (IN, ANY, ALL). Correlated vs Non-correlated subqueries. EXISTS operator.</li>
+        <li class="mid"><strong>Views:</strong> CREATE VIEW, DROP VIEW. Advantages of views. Updatable vs non-updatable views.</li>
+        <li class="mid"><strong>Indexes:</strong> CREATE INDEX, types (clustered, non-clustered), advantages and trade-offs.</li>
+        <li class="mid"><strong>Constraints in SQL:</strong> NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT — inline and table-level syntax.</li>
+        <li class="ok"><strong>DCL & TCL:</strong> GRANT, REVOKE (DCL). COMMIT, ROLLBACK, SAVEPOINT (TCL).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">5</div>
+      <div class="unit-title">Normalization</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Anomalies:</strong> Insertion Anomaly, Deletion Anomaly, Update Anomaly — with examples. Why normalization is needed.</li>
+        <li class="imp"><strong>Functional Dependency:</strong> X → Y means X determines Y. Types: Full FD, Partial FD, Transitive FD. Armstrong's Axioms: Reflexivity, Augmentation, Transitivity.</li>
+        <li class="imp"><strong>1NF:</strong> No repeating groups, all attributes atomic. Example of non-1NF table and its conversion.</li>
+        <li class="imp"><strong>2NF:</strong> 1NF + No Partial Dependency (every non-key attribute fully depends on entire PK). Applies only when PK is composite. Example conversion.</li>
+        <li class="imp"><strong>3NF:</strong> 2NF + No Transitive Dependency (non-key attribute should not depend on another non-key attribute). Full example with decomposition.</li>
+        <li class="imp"><strong>BCNF:</strong> For every FD X → Y, X must be a superkey. Stricter than 3NF. Example where 3NF holds but BCNF fails.</li>
+        <li class="ok"><strong>4NF & 5NF:</strong> Brief definition only — Multi-valued dependency (4NF), Join dependency (5NF).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">6</div>
+      <div class="unit-title">Transactions, Concurrency & Recovery</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Transaction:</strong> Unit of work — sequence of operations. ACID Properties: Atomicity (all or nothing), Consistency (valid state to valid state), Isolation (concurrent transactions don't interfere), Durability (committed changes persist).</li>
+        <li class="imp"><strong>Transaction States:</strong> Active → Partially Committed → Committed / Failed → Aborted. State diagram required.</li>
+        <li class="imp"><strong>Concurrency Problems:</strong> Lost Update (W-W conflict), Dirty Read (W-R conflict), Unrepeatable Read, Phantom Read — example for each.</li>
+        <li class="mid"><strong>Schedules:</strong> Serial vs Non-serial. Serializable schedule. Conflict Serializability — Precedence Graph method.</li>
+        <li class="mid"><strong>Lock-based Protocols:</strong> Shared Lock (S), Exclusive Lock (X). Lock compatibility matrix. Two-Phase Locking (2PL) — Growing phase, Shrinking phase. Strict 2PL.</li>
+        <li class="mid"><strong>Deadlock:</strong> Definition, conditions (Mutual Exclusion, Hold & Wait, No Preemption, Circular Wait). Detection (Wait-for graph), Prevention (Wait-Die, Wound-Wait), Avoidance (Banker's Algorithm).</li>
+        <li class="ok"><strong>Recovery:</strong> Log-based recovery (UNDO/REDO). Checkpoint. Shadow Paging concept.</li>
+        <li class="ok"><strong>Timestamp Ordering:</strong> Thomas Write Rule, basic timestamp protocol.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">7</div>
+      <div class="unit-title">File Organization & Indexing</div>
+      <span class="unit-badge medium">Important</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="mid"><strong>File Organization Types:</strong> Sequential, Heap (Unordered), Hash, Indexed — advantages and disadvantages of each.</li>
+        <li class="mid"><strong>Indexing:</strong> Dense vs Sparse Index. Primary Index, Secondary Index, Clustering Index. Why indexing speeds up queries.</li>
+        <li class="mid"><strong>B-Tree:</strong> Properties — balanced, all leaves at same level, minimum/maximum keys per node. Insertion and search operations.</li>
+        <li class="mid"><strong>B+ Tree:</strong> Difference from B-Tree — data only in leaf nodes, leaf nodes linked. Why B+ Tree preferred for databases.</li>
+        <li class="ok"><strong>Hashing:</strong> Static hashing, Dynamic hashing (Extendible hashing). Hash collision handling — Linear probing, Chaining.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">🏆 Resources</h3>
+  <ul class="resource-list">
+    <li class="resource-item"><div class="resource-rank">1</div><div class="resource-info"><strong>Gate Smashers DBMS Full Playlist <span class="rtag yt">YouTube</span><span class="rtag free">FREE</span></strong><span>60+ short Hindi videos. Best resource for CCSU DBMS. Covers every topic above in depth.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">2</div><div class="resource-info"><strong>GeeksforGeeks DBMS <span class="rtag free">FREE</span></strong><span>geeksforgeeks.org/dbms — written notes, MCQs, examples. Use for normalization and transaction topics.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">3</div><div class="resource-info"><strong>W3Schools SQL Tutorial <span class="rtag free">FREE</span></strong><span>w3schools.com/sql — interactive SQL in browser. Practice all JOIN types and subqueries here.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">4</div><div class="resource-info"><strong>Navathe & Ramez "DBMS" Textbook <span class="rtag book">Book</span></strong><span>Standard CCSU reference. Focus on ER Model, Normalization, and Transaction chapters.</span></div></li>
+  </ul>
+  <div class="tips-box">
+    <h4>⚡ Quick Wins</h4>
+    <ul>
+      <li>ER Diagram for Library System/Bank System — draw it 3 times from memory</li>
+      <li>ACID properties with examples — 5 marks, appears every year</li>
+      <li>Normalization: 1NF→2NF→3NF with one complete example = 10 marks</li>
+      <li>Practice 20 SQL queries — especially JOINs and GROUP BY with HAVING</li>
+      <li>DBMS = best competitive exam overlap — SSC CGL IT, Bank IT Officer, NIC</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== SOFTWARE ENGINEERING ===== -->
+<div class="tab-panel" id="panel-se">
+  <div class="subject-header">
+    <div class="subject-icon">⚙️</div>
+    <div class="subject-meta">
+      <h2>Software Engineering</h2>
+      <p>BCA 3003T · Theory Only · 3 Credits</p>
+      <div class="meta-row">
+        <span class="chip a">3 Credits</span>
+        <span class="chip">Theory Only</span>
+        <span class="chip">Diagram Scoring</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> Exam mein zaroor aata hai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div> Aksar aata hai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Kabhi kabhi aata hai</div>
+  </div>
+
+  <div class="topic-unit open">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">1</div>
+      <div class="unit-title">Introduction & Software Process</div>
+      <span class="unit-badge medium">Important</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Software:</strong> Definition (IEEE) — programs + documentation + data. Types: System software, Application software, Scientific, Embedded, Web, AI software.</li>
+        <li class="imp"><strong>Software Crisis:</strong> What it is, causes (increasing complexity, lack of management, poor design), consequences (cost overrun, schedule slippage, poor quality). Very common CCSU question.</li>
+        <li class="imp"><strong>Software Engineering:</strong> IEEE definition. Goals — reliability, efficiency, maintainability. Difference from programming.</li>
+        <li class="imp"><strong>SDLC Phases:</strong> Planning → Requirements → Design → Coding → Testing → Maintenance. Brief explanation of each phase.</li>
+        <li class="mid"><strong>Software Characteristics:</strong> Software is developed not manufactured. Software does not wear out. Software is custom built. Complexity vs hardware.</li>
+        <li class="ok"><strong>Software Process Models overview:</strong> Prescriptive vs Agile. Why different models exist for different project types.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">2</div>
+      <div class="unit-title">SDLC Models — All Models with Diagrams</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Waterfall Model:</strong> Linear sequential model. 6 phases with feedback arrows. Advantages (simple, well-documented), Disadvantages (no flexibility, testing at end). When to use. Diagram required.</li>
+        <li class="imp"><strong>Prototype Model:</strong> Build quick prototype, get feedback, refine. Types: Throwaway/Rapid Prototyping, Evolutionary Prototyping. Advantages (user involvement), Disadvantages (may become permanent). Diagram.</li>
+        <li class="imp"><strong>Spiral Model:</strong> Boehm's model. 4 quadrants: Planning, Risk Analysis, Engineering, Evaluation. Risk-driven, iterative. Advantages (risk management), Disadvantages (expensive, complex). Diagram.</li>
+        <li class="mid"><strong>Incremental Model:</strong> Core product first, then add features incrementally. Comparison with Iterative model.</li>
+        <li class="mid"><strong>RAD Model:</strong> Rapid Application Development. 4 phases: Business Modelling, Data Modelling, Process Modelling, Application Generation. Best for < 3 months projects. Diagram.</li>
+        <li class="mid"><strong>Agile Model:</strong> 12 Agile principles (know at least 4). Scrum framework: Product Backlog, Sprint (2-4 weeks), Sprint Backlog, Daily Scrum, Sprint Review, Sprint Retrospective. Diagram of Scrum.</li>
+        <li class="ok"><strong>V-Model:</strong> Verification and Validation at each stage. Each development phase maps to testing phase. When to use.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">3</div>
+      <div class="unit-title">Requirements Engineering & System Modelling</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Requirements Engineering Process:</strong> Elicitation → Analysis → Specification → Validation. Brief definition of each.</li>
+        <li class="imp"><strong>Functional vs Non-functional Requirements:</strong> Functional = what system does (features, functions). Non-functional = how well it does it (performance, security, reliability). Examples of each — CCSU exam staple.</li>
+        <li class="imp"><strong>SRS Document:</strong> Software Requirements Specification. IEEE format. Characteristics: Complete, Consistent, Unambiguous, Verifiable, Traceable. Contents of SRS.</li>
+        <li class="imp"><strong>DFD (Data Flow Diagram):</strong> 4 symbols — External Entity (rectangle), Process (circle/rounded), Data Store (open rectangle), Data Flow (arrow). Level 0 (Context), Level 1, Level 2. Practice drawing for Library/ATM system — 10-mark question.</li>
+        <li class="mid"><strong>Feasibility Study:</strong> Technical feasibility, Economic feasibility (cost-benefit), Operational feasibility, Schedule feasibility.</li>
+        <li class="mid"><strong>Data Dictionary:</strong> Definition, contents — name, alias, description, data type, length, range, validation rules.</li>
+        <li class="ok"><strong>Decision Tree & Decision Table:</strong> For complex business logic representation.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">4</div>
+      <div class="unit-title">Software Design — Coupling, Cohesion & UML</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Design Concepts:</strong> Abstraction (procedural, data, control), Modularity (why break into modules), Information Hiding, Stepwise Refinement, Structural Partitioning.</li>
+        <li class="imp"><strong>Coupling (worst to best):</strong> Content Coupling → Common Coupling → Control Coupling → Stamp Coupling → Data Coupling. Definitions + examples. Low coupling = good design. Table format answer.</li>
+        <li class="imp"><strong>Cohesion (worst to best):</strong> Coincidental → Logical → Temporal → Procedural → Communicational → Sequential → Functional. Definitions + examples. High cohesion = good design. Table format.</li>
+        <li class="imp"><strong>UML Use Case Diagram:</strong> Actors, Use Cases, System Boundary. <<include>> and <<extend>> relationships. Draw for Library System / ATM. Practice 2 complete examples.</li>
+        <li class="imp"><strong>UML Class Diagram:</strong> Class (name, attributes, methods). Relationships: Association, Aggregation, Composition, Inheritance (Generalization). Multiplicity notation.</li>
+        <li class="mid"><strong>UML Sequence Diagram:</strong> Shows object interactions over time. Lifelines, Messages (synchronous/asynchronous), Activation bars.</li>
+        <li class="mid"><strong>UML Activity Diagram:</strong> Flowchart-like. Start, End, Activity, Decision, Fork, Join nodes. Used for workflow modelling.</li>
+        <li class="ok"><strong>UML State Diagram:</strong> States, Transitions, Events, Actions. For objects with complex lifecycle.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">5</div>
+      <div class="unit-title">Software Testing</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Verification vs Validation:</strong> Verification = "Are we building the product right?" (reviews, walkthroughs). Validation = "Are we building the right product?" (actual testing). V&V distinction is a frequent question.</li>
+        <li class="imp"><strong>Testing Levels:</strong> Unit Testing (individual module), Integration Testing (combine modules — Top-down, Bottom-up, Big Bang), System Testing (whole system), Acceptance Testing (user acceptance, alpha/beta).</li>
+        <li class="imp"><strong>Black Box Testing:</strong> Tests without internal code knowledge — based on input/output. Techniques: Equivalence Partitioning (divide input into classes), Boundary Value Analysis (test boundaries), Decision Table Testing.</li>
+        <li class="imp"><strong>White Box Testing:</strong> Tests with internal code knowledge. Coverage criteria: Statement Coverage (every statement executed), Branch Coverage (every branch tested), Path Coverage (every path tested). McCabe's Cyclomatic Complexity = E - N + 2P.</li>
+        <li class="mid"><strong>Alpha vs Beta Testing:</strong> Alpha = done by in-house testers at developer's site. Beta = done by real users at their site. Order: Alpha first, then Beta.</li>
+        <li class="mid"><strong>Regression Testing:</strong> Re-test after changes to ensure nothing broke. Smoke Testing: basic tests to check if build is stable enough for detailed testing.</li>
+        <li class="ok"><strong>Performance Testing:</strong> Load testing, Stress testing, Spike testing. Brief definitions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">6</div>
+      <div class="unit-title">Software Metrics, Maintenance & Project Management</div>
+      <span class="unit-badge medium">Important</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="mid"><strong>Software Metrics:</strong> LOC (Lines of Code) — advantages (simple) and disadvantages (language dependent). Function Points — counts functions not lines. Halstead Metrics — program vocabulary, length, volume.</li>
+        <li class="mid"><strong>COCOMO Model:</strong> Constructive Cost Model. Basic COCOMO: Effort = a × (KDSI)^b, Time = c × (Effort)^d. Three modes: Organic, Semi-detached, Embedded. Brief formulas + application.</li>
+        <li class="mid"><strong>Software Maintenance Types:</strong> Corrective (fix bugs), Adaptive (adapt to new environment), Perfective (improve performance/features), Preventive (prevent future problems). Know all 4 with examples.</li>
+        <li class="ok"><strong>Software Re-engineering:</strong> Forward engineering, Reverse engineering, Re-engineering concept.</li>
+        <li class="ok"><strong>Risk Management:</strong> Risk identification, Risk analysis (probability × impact), Risk planning, Risk monitoring.</li>
+        <li class="ok"><strong>CASE Tools:</strong> Upper CASE (requirements, design), Lower CASE (coding, testing). Examples: Rational Rose, Visio.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">🏆 Resources</h3>
+  <ul class="resource-list">
+    <li class="resource-item"><div class="resource-rank">1</div><div class="resource-info"><strong>Knowledge Gate — Software Engineering <span class="rtag yt">YouTube</span><span class="rtag free">FREE</span></strong><span>Search "Knowledge Gate Software Engineering". Concise Hindi videos for all models & UML diagrams. 20–25 videos.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">2</div><div class="resource-info"><strong>Tutorialspoint Software Engineering <span class="rtag free">FREE</span></strong><span>tutorialspoint.com/software_engineering — chapter-wise notes with all SDLC diagrams. Best for drawing practice.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">3</div><div class="resource-info"><strong>Pressman "Software Engineering" (PDF excerpts) <span class="rtag book">Book</span></strong><span>Standard CCSU reference. SDLC, Testing, and Metrics chapters are most relevant.</span></div></li>
+  </ul>
+  <div class="tips-box">
+    <h4>⚡ Quick Wins</h4>
+    <ul>
+      <li>Draw all 5 SDLC model diagrams from memory — Waterfall comparison table = easy 10 marks</li>
+      <li>Coupling & Cohesion types (all 5+7) in table format = guaranteed 8–10 marks</li>
+      <li>UML Use Case for Library/ATM — practice drawing 2 complete diagrams</li>
+      <li>DFD Level 0 and Level 1 for any system — always in CCSU paper</li>
+      <li>Verification vs Validation, Black Box vs White Box — comparison table answers</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== PYTHON ===== -->
+<div class="tab-panel" id="panel-python">
+  <div class="subject-header">
+    <div class="subject-icon">🐍</div>
+    <div class="subject-meta">
+      <h2>Python Programming</h2>
+      <p>BCA 3007T + BCA 3007P · Theory + Practical · 4 Credits</p>
+      <div class="meta-row">
+        <span class="chip r">4 Credits</span>
+        <span class="chip">Theory + Lab</span>
+        <span class="chip a">Practice Mandatory</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> Exam mein zaroor aata hai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div> Aksar aata hai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Kabhi kabhi aata hai</div>
+  </div>
+
+  <div class="topic-unit open">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">1</div>
+      <div class="unit-title">Basics — Variables, Data Types & Operators</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Python Features:</strong> Interpreted, Dynamically typed, Object-oriented, High-level, Easy syntax. Why Python is popular.</li>
+        <li class="imp"><strong>Variables & Naming Rules:</strong> No declaration needed. Dynamic typing. Variable naming: starts with letter/_, no keywords. Multiple assignment: a, b = 1, 2.</li>
+        <li class="imp"><strong>Data Types:</strong> int (10, -5), float (3.14), complex (2+3j), bool (True/False), str ("hello"), list ([1,2,3]), tuple ((1,2,3)), dict ({"a":1}), set ({1,2,3}), NoneType (None).</li>
+        <li class="imp"><strong>Type Conversion:</strong> Implicit (int + float = float automatically). Explicit: int("5"), float("3.14"), str(10), list((1,2)), tuple([1,2]).</li>
+        <li class="imp"><strong>Operators:</strong> Arithmetic (+,-,*,/,//,%,**), Comparison (==,!=,<,>,<=,>=), Logical (and, or, not), Assignment (=,+=,-=,*=,/=), Identity (is, is not), Membership (in, not in), Bitwise (&,|,^,~,<<,>>).</li>
+        <li class="mid"><strong>Input/Output:</strong> input() returns string — always convert. print() with sep, end parameters. f-strings: f"Name: {name}". format(): "{}".format(x).</li>
+        <li class="ok"><strong>Comments:</strong> # single line, ''' multiline '''. Indentation rules — mandatory in Python.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">2</div>
+      <div class="unit-title">Strings & Conditional Statements</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>String Basics:</strong> Immutable. Indexing (s[0]), Negative indexing (s[-1]). Slicing: s[start:end:step]. Concatenation (+), Repetition (*).</li>
+        <li class="imp"><strong>String Methods:</strong> len(), upper(), lower(), strip()/lstrip()/rstrip(), split(sep), join(iterable), replace(old,new), find(sub), count(sub), startswith(prefix), endswith(suffix), title(), capitalize(), isdigit(), isalpha(), isalnum().</li>
+        <li class="imp"><strong>if-elif-else:</strong> Syntax (colon + indentation). Nested if. Short form: value = x if condition else y (ternary).</li>
+        <li class="mid"><strong>String Formatting:</strong> % operator: "Hello %s" % name. .format(): "Hello {}".format(name). f-string: f"Hello {name}" — most modern way.</li>
+        <li class="ok"><strong>String Comparison:</strong> Lexicographic comparison. in operator for substring check. ord() and chr() functions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">3</div>
+      <div class="unit-title">Lists, Tuples, Dictionary & Set</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>List:</strong> Mutable, ordered, allows duplicates. Methods: append(x), extend(iterable), insert(i,x), remove(x), pop(i), sort(), reverse(), index(x), count(x), copy(), clear(). List slicing. Nested lists.</li>
+        <li class="imp"><strong>List Comprehension:</strong> [expression for item in iterable if condition]. E.g., squares = [x**2 for x in range(10)]. This is asked as theory + code question.</li>
+        <li class="imp"><strong>Tuple:</strong> Immutable, ordered, allows duplicates. When to use tuple vs list. Packing: t = 1,2,3. Unpacking: a,b,c = t. Single element tuple: (1,). Methods: count(), index().</li>
+        <li class="imp"><strong>Dictionary:</strong> Mutable, key-value pairs, keys unique. Methods: keys(), values(), items(), get(key,default), update(dict2), pop(key), del d[key], clear(). Dictionary comprehension. Nested dict.</li>
+        <li class="imp"><strong>Set:</strong> Unordered, no duplicates. Operations: union (|), intersection (&), difference (-), symmetric_difference (^). Methods: add(x), remove(x), discard(x), union(), intersection(), issubset(), issuperset(). Frozenset (immutable set).</li>
+        <li class="mid"><strong>Comparison Table:</strong> List vs Tuple vs Set vs Dictionary — mutability, ordering, duplicates, syntax. This table appears in exams.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">4</div>
+      <div class="unit-title">Loops</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>for Loop:</strong> for x in iterable: Iterating over list, tuple, string, range(). range(start, stop, step). Nested for loops. for with else clause.</li>
+        <li class="imp"><strong>while Loop:</strong> while condition: Infinite loop with break. while with else clause. Counter-controlled and sentinel-controlled loops.</li>
+        <li class="imp"><strong>break:</strong> Exits the loop immediately. Useful inside nested loops. Example: search loop.</li>
+        <li class="imp"><strong>continue:</strong> Skips current iteration, continues to next. Example: skip even numbers.</li>
+        <li class="mid"><strong>pass:</strong> Do nothing placeholder. Used in empty function/class body or empty if block.</li>
+        <li class="mid"><strong>enumerate():</strong> enumerate(iterable, start=0) — gives (index, value) pairs. Useful alternative to range(len(list)).</li>
+        <li class="mid"><strong>zip():</strong> Combines two iterables element-wise. for a, b in zip(list1, list2).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">5</div>
+      <div class="unit-title">Functions & Recursion</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Function Definition:</strong> def function_name(params): ... return value. Function with no return returns None. Calling functions. Docstrings.</li>
+        <li class="imp"><strong>Parameters:</strong> Positional parameters. Default parameters: def greet(name="World"). Keyword arguments: greet(name="Alice"). *args (tuple of positional), **kwargs (dict of keyword).</li>
+        <li class="imp"><strong>Scope (LEGB):</strong> Local → Enclosing → Global → Built-in. global keyword to modify global inside function. nonlocal for nested functions.</li>
+        <li class="imp"><strong>Lambda Functions:</strong> lambda args: expression. Anonymous functions. E.g., square = lambda x: x**2. Use in sorted(), map(), filter().</li>
+        <li class="imp"><strong>Recursion:</strong> Function calling itself. Base case (stopping condition) + recursive case. Examples: Factorial (n! = n × (n-1)!), Fibonacci (F(n) = F(n-1)+F(n-2)), Sum of digits. Stack overflow if no base case.</li>
+        <li class="mid"><strong>map(), filter(), reduce():</strong> map(func, iterable), filter(func, iterable), reduce(func, iterable) from functools. Use with lambda.</li>
+        <li class="ok"><strong>Generators:</strong> yield keyword. Generator functions return iterator. Memory efficient. next() function.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">6</div>
+      <div class="unit-title">File Handling</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Opening Files:</strong> open(filename, mode). Modes: 'r' (read), 'w' (write, creates/overwrites), 'a' (append), 'r+' (read+write), 'rb'/'wb' (binary). Always close file or use with statement.</li>
+        <li class="imp"><strong>Reading:</strong> file.read() — entire file as string. file.readline() — one line. file.readlines() — list of all lines. Iterating: for line in file: ...</li>
+        <li class="imp"><strong>Writing:</strong> file.write(string), file.writelines(list). Write does NOT add newline automatically — add \n manually.</li>
+        <li class="imp"><strong>with Statement:</strong> with open('file.txt', 'r') as f: ... Automatically closes file even if exception occurs. Best practice — CCSU exams expect this.</li>
+        <li class="mid"><strong>File Pointer:</strong> file.tell() — current position. file.seek(offset, from) — move pointer. from: 0=start, 1=current, 2=end.</li>
+        <li class="ok"><strong>os Module for Files:</strong> os.path.exists(), os.rename(), os.remove(), os.getcwd(), os.listdir().</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">7</div>
+      <div class="unit-title">OOP — Part 1 & Part 2</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Class & Object:</strong> class ClassName: ... obj = ClassName(). Class = blueprint. Object = instance. self refers to current object.</li>
+        <li class="imp"><strong>__init__ method:</strong> Constructor — called automatically when object is created. def __init__(self, params): ... Used to initialize instance variables.</li>
+        <li class="imp"><strong>Instance vs Class Variables:</strong> Instance variable: defined in __init__ with self. Class variable: defined outside any method, shared by all objects.</li>
+        <li class="imp"><strong>Inheritance:</strong> class Child(Parent): Inherits attributes and methods. Types: Single (1 parent), Multiple (multiple parents), Multilevel (chain), Hierarchical (1 parent many children). super() to call parent method.</li>
+        <li class="imp"><strong>Method Overriding:</strong> Child class redefines parent's method. Polymorphism via overriding.</li>
+        <li class="imp"><strong>Encapsulation:</strong> Private variables: __name (name mangling → _ClassName__name). Protected: _name (convention, not enforced). Getter/setter methods.</li>
+        <li class="imp"><strong>Polymorphism:</strong> Same interface, different behaviour. Duck typing in Python. Operator overloading with magic methods: __add__, __str__, __len__, __eq__.</li>
+        <li class="mid"><strong>Abstract Classes:</strong> from abc import ABC, abstractmethod. Abstract method must be implemented in subclass.</li>
+        <li class="mid"><strong>Magic/Dunder Methods:</strong> __str__ (str(obj)), __repr__, __len__ (len(obj)), __add__ (obj1+obj2), __init__, __del__. Write programs using these.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">8</div>
+      <div class="unit-title">Exception Handling & Modules ⚠️ (Not in video — read separately)</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Exception Handling:</strong> try: ... except ExceptionType: ... else: ... finally: ... try = code that may fail. except = handle specific error. else = runs if no exception. finally = always runs (cleanup).</li>
+        <li class="imp"><strong>Common Exceptions:</strong> ValueError (wrong type), TypeError (operation on wrong type), IndexError (index out of range), KeyError (dict key missing), FileNotFoundError, ZeroDivisionError, NameError, AttributeError.</li>
+        <li class="imp"><strong>raise Statement:</strong> raise ValueError("message") — manually raise exception. raise without argument re-raises current exception.</li>
+        <li class="mid"><strong>Custom Exceptions:</strong> class MyError(Exception): pass. Raise and catch your own exceptions.</li>
+        <li class="imp"><strong>Modules:</strong> import math — math.sqrt(), math.pi, math.ceil(), math.floor(). import random — random.random(), random.randint(a,b), random.choice(list), random.shuffle(list). import os — file/directory operations. import sys — sys.argv, sys.exit().</li>
+        <li class="mid"><strong>Creating Modules:</strong> Save functions in mymodule.py, then import mymodule or from mymodule import func_name. __name__ == '__main__' check.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">🏆 Resources</h3>
+  <ul class="resource-list">
+    <li class="resource-item"><div class="resource-rank">1</div><div class="resource-info"><strong>Your Video (ERCMXc8x7mc) — ~10 hr course <span class="rtag yt">YouTube</span><span class="rtag free">FREE</span></strong><span>Covers Units 1–7 fully. Watch at 1.5x, type every code example by hand. Units 1–5 first 2 days, Units 6–7 on Day 3.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">2</div><div class="resource-info"><strong>GeeksforGeeks Python — Exception Handling & Modules <span class="rtag free">FREE</span></strong><span>Use specifically for Unit 8 topics (Exception Handling, Modules) which the video doesn't cover. 20–30 mins extra reading.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">3</div><div class="resource-info"><strong>W3Schools Python — Try it Editor <span class="rtag free">FREE</span></strong><span>w3schools.com/python — run code without installation. Perfect for practicing programs in browser.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">4</div><div class="resource-info"><strong>Replit.com — Free Python IDE <span class="rtag free">FREE</span></strong><span>replit.com — full Python environment in browser. No install needed. Use for writing all practical programs.</span></div></li>
+  </ul>
+  <div class="tips-box">
+    <h4>⚡ Practical Programs to Practice (CCSU Exam Staples)</h4>
+    <ul>
+      <li>Factorial using recursion + using loop (both versions)</li>
+      <li>Fibonacci sequence (first n terms)</li>
+      <li>Palindrome check for string and number</li>
+      <li>Prime number check + list all primes up to n</li>
+      <li>Write & read from a text file (with 'with' statement)</li>
+      <li>Class with __init__, 2 methods, create 2 objects</li>
+      <li>Inheritance example — Shape → Circle → area()</li>
+      <li>Exception handling with try-except-finally</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== WEB PROGRAMMING ===== -->
+<div class="tab-panel" id="panel-web">
+  <div class="subject-header">
+    <div class="subject-icon">🌐</div>
+    <div class="subject-meta">
+      <h2>Web Programming-I (Group C Elective)</h2>
+      <p>BCA 3006T + BCA 3006P · Theory + Practical · 3 Credits</p>
+      <div class="meta-row">
+        <span class="chip r">3 Credits</span>
+        <span class="chip g">Group C: Full Stack Spec</span>
+        <span class="chip a">Most Scoring Elective</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> Exam mein zaroor aata hai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div> Aksar aata hai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Kabhi kabhi aata hai</div>
+  </div>
+
+  <div class="topic-unit open">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">1</div>
+      <div class="unit-title">Internet & Web Basics</div>
+      <span class="unit-badge medium">Important</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Internet vs WWW:</strong> Internet = global network of networks. WWW = collection of web pages on Internet. Tim Berners-Lee invented WWW.</li>
+        <li class="imp"><strong>HTTP vs HTTPS:</strong> HTTP = HyperText Transfer Protocol. HTTPS = HTTP + SSL/TLS (secure). How HTTP works: Request → Server → Response. Status codes: 200 OK, 404 Not Found, 500 Server Error.</li>
+        <li class="imp"><strong>URL Structure:</strong> protocol://domain:port/path?query#fragment. E.g., https://www.example.com:443/page?id=1#section.</li>
+        <li class="mid"><strong>Web Browser vs Web Server:</strong> Browser = client that requests pages (Chrome, Firefox). Server = responds with pages (Apache, Nginx, IIS).</li>
+        <li class="mid"><strong>DNS:</strong> Domain Name System. Translates domain names to IP addresses. DNS hierarchy.</li>
+        <li class="ok"><strong>Client-side vs Server-side:</strong> Client-side = HTML/CSS/JS (runs in browser). Server-side = PHP/Python/Java (runs on server). Static vs Dynamic websites.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">2</div>
+      <div class="unit-title">HTML — Complete Coverage</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Document Structure:</strong> &lt;!DOCTYPE html&gt;, &lt;html&gt;, &lt;head&gt; (metadata), &lt;body&gt; (visible content). Every page must have this structure — exam practical must start with this.</li>
+        <li class="imp"><strong>Head Elements:</strong> &lt;title&gt; (tab name), &lt;meta charset="UTF-8"&gt;, &lt;meta name="viewport"&gt;, &lt;link&gt; (external CSS), &lt;style&gt; (internal CSS), &lt;script&gt; (JS).</li>
+        <li class="imp"><strong>Text Tags:</strong> &lt;h1&gt; to &lt;h6&gt; (headings), &lt;p&gt; (paragraph), &lt;br&gt; (line break), &lt;hr&gt; (horizontal rule), &lt;strong&gt;/&lt;b&gt; (bold), &lt;em&gt;/&lt;i&gt; (italic), &lt;u&gt; (underline), &lt;s&gt; (strikethrough), &lt;sup&gt; (superscript), &lt;sub&gt; (subscript), &lt;pre&gt; (preformatted), &lt;blockquote&gt;, &lt;code&gt;.</li>
+        <li class="imp"><strong>Lists:</strong> &lt;ul&gt; (unordered — bullets), &lt;ol&gt; (ordered — numbers), &lt;li&gt; (list item). &lt;dl&gt; (definition list), &lt;dt&gt; (term), &lt;dd&gt; (description). Nested lists.</li>
+        <li class="imp"><strong>Links:</strong> &lt;a href="url"&gt;. target="_blank" (new tab), target="_self" (same tab). Absolute vs relative URLs. Anchor links: href="#id". mailto: and tel: links.</li>
+        <li class="imp"><strong>Images:</strong> &lt;img src="path" alt="description" width="x" height="y"&gt;. alt attribute (accessibility + SEO). Image as link: wrap &lt;img&gt; in &lt;a&gt;.</li>
+        <li class="imp"><strong>Tables:</strong> &lt;table&gt;, &lt;tr&gt; (row), &lt;th&gt; (header cell), &lt;td&gt; (data cell). &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;. colspan (merge columns), rowspan (merge rows). border attribute. Nested tables.</li>
+        <li class="imp"><strong>Forms:</strong> &lt;form action="url" method="get/post"&gt;. Input types: text, password, email, number, date, radio, checkbox, file, hidden, submit, reset, button. &lt;textarea&gt;, &lt;select&gt;+&lt;option&gt;, &lt;label for="id"&gt;, &lt;fieldset&gt;+&lt;legend&gt;. Attributes: placeholder, required, disabled, readonly, maxlength, name, id, value.</li>
+        <li class="mid"><strong>Semantic HTML5 Tags:</strong> &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;, &lt;figure&gt;+&lt;figcaption&gt;. Why semantic tags over &lt;div&gt; — SEO and accessibility.</li>
+        <li class="ok"><strong>Multimedia:</strong> &lt;audio src controls&gt;, &lt;video src controls width height&gt;, &lt;source&gt; inside them. &lt;iframe src width height&gt; for embedding.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">3</div>
+      <div class="unit-title">CSS — Complete Coverage</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>CSS Syntax:</strong> selector { property: value; }. 3 ways to add CSS: Inline (style=""), Internal (&lt;style&gt; in head), External (&lt;link&gt; to .css file). Priority: Inline > Internal > External.</li>
+        <li class="imp"><strong>Selectors:</strong> Element (p), Class (.myclass), ID (#myid), Universal (*), Attribute ([type="text"]). Pseudo-class (:hover, :focus, :nth-child(n), :first-child, :last-child). Pseudo-element (::before, ::after, ::first-letter). Combinators: Descendant (div p), Child (div > p), Adjacent (h1 + p), Sibling (h1 ~ p).</li>
+        <li class="imp"><strong>Box Model:</strong> content → padding → border → margin. box-sizing: content-box (default) vs border-box. Margin collapsing. Padding vs Margin difference.</li>
+        <li class="imp"><strong>Display:</strong> block (full width, new line), inline (content width, same line), inline-block (inline but accepts width/height), none (hidden), flex, grid.</li>
+        <li class="imp"><strong>Positioning:</strong> static (default, in flow), relative (offset from normal position), absolute (removed from flow, relative to nearest positioned ancestor), fixed (relative to viewport), sticky (hybrid). z-index for stacking order.</li>
+        <li class="imp"><strong>Colors:</strong> Named (red, blue), Hex (#FF5733), RGB (rgb(255,87,51)), RGBA (rgba(255,87,51,0.5)), HSL (hsl(10,100%,60%)).</li>
+        <li class="imp"><strong>Typography:</strong> font-family (font stack with fallbacks), font-size (px, em, rem, %), font-weight (100–900, normal, bold), font-style (italic, normal), text-align (left, right, center, justify), text-decoration (underline, none, line-through), line-height, letter-spacing, text-transform (uppercase, lowercase, capitalize).</li>
+        <li class="mid"><strong>Background:</strong> background-color, background-image (url()), background-repeat (repeat, no-repeat, repeat-x, repeat-y), background-position, background-size (cover, contain, px), background-attachment (scroll, fixed). Shorthand: background: color url() repeat position.</li>
+        <li class="mid"><strong>Flexbox:</strong> Container: display:flex, flex-direction (row/column), justify-content (flex-start, flex-end, center, space-between, space-around), align-items (flex-start, flex-end, center, stretch), flex-wrap. Item: flex-grow, flex-shrink, flex-basis, align-self, order.</li>
+        <li class="mid"><strong>CSS Grid Basics:</strong> display:grid, grid-template-columns (e.g., repeat(3, 1fr)), grid-template-rows, gap. Grid is 2D, Flex is 1D.</li>
+        <li class="ok"><strong>Media Queries:</strong> @media (max-width: 768px) { ... }. Mobile-first approach. Breakpoints. Viewport meta tag is required.</li>
+        <li class="ok"><strong>CSS Transitions:</strong> transition: property duration timing-function delay. E.g., transition: background-color 0.3s ease. :hover effects.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="topic-unit">
+    <div class="topic-unit-head" onclick="toggleUnit(this)">
+      <div class="unit-num">4</div>
+      <div class="unit-title">JavaScript — Basics & DOM</div>
+      <span class="unit-badge hot">Must Do</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="topic-unit-body">
+      <ul class="topic-list">
+        <li class="imp"><strong>Adding JS:</strong> Inline (onclick=""), Internal (&lt;script&gt; in body/head), External (&lt;script src="file.js"&gt;). console.log() for debugging. alert(), confirm(), prompt().</li>
+        <li class="imp"><strong>Variables:</strong> var (function-scoped, can redeclare), let (block-scoped, can reassign, can't redeclare), const (block-scoped, can't reassign). Key differences — exam question.</li>
+        <li class="imp"><strong>Data Types:</strong> number, string, boolean, null, undefined, object, array, symbol. typeof operator. Loose (==) vs Strict (===) equality.</li>
+        <li class="imp"><strong>Operators:</strong> Arithmetic, Comparison (== vs ===), Logical (&&, ||, !), Ternary (condition ? a : b), typeof, instanceof.</li>
+        <li class="imp"><strong>Control Flow:</strong> if-else, switch-case (with break and default). for loop, while, do-while. for...of (arrays), for...in (objects).</li>
+        <li class="imp"><strong>Functions:</strong> Function declaration, Function expression, Arrow function (const f = (x) => x*2). Differences between them. Default parameters. Rest parameters (...args).</li>
+        <li class="imp"><strong>Arrays:</strong> Methods: push(), pop(), shift(), unshift(), splice(start,deleteCount,items), slice(start,end), concat(), indexOf(), includes(). Higher-order: map(callback), filter(callback), forEach(callback), find(callback), reduce(callback, initial).</li>
+        <li class="imp"><strong>DOM Manipulation:</strong> document.getElementById('id'), querySelector('selector'), querySelectorAll(). innerHTML, textContent, innerText. style.property. classList.add(), classList.remove(), classList.toggle(). setAttribute(), getAttribute(). createElement(), appendChild(), removeChild().</li>
+        <li class="imp"><strong>Events:</strong> addEventListener('event', callback). Common events: click, mouseover, mouseout, keydown, keyup, submit, change, load. event.preventDefault(). this inside event handlers.</li>
+        <li class="mid"><strong>Form Validation:</strong> document.querySelector('form').addEventListener('submit', function(e) { e.preventDefault(); validate(); }). Checking empty fields, email format, password length.</li>
+        <li class="ok"><strong>ES6 Features:</strong> Template literals (`Hello ${name}`), Destructuring (const {a,b} = obj), Spread operator (...arr), Object shorthand, let/const, Arrow functions.</li>
+        <li class="ok"><strong>Objects:</strong> Creating objects (literal, constructor). Accessing properties (dot notation, bracket notation). Methods in objects. Object.keys(), Object.values(), Object.entries().</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">🏆 Resources</h3>
+  <ul class="resource-list">
+    <li class="resource-item"><div class="resource-rank">1</div><div class="resource-info"><strong>Code With Harry — HTML+CSS+JS (Hindi) <span class="rtag yt">YouTube</span><span class="rtag free">FREE</span></strong><span>Search "Code With Harry HTML", "Code With Harry CSS", "Code With Harry JavaScript". Full series in Hindi. Best for CCSU level. ~30 hours total — watch relevant units, don't watch all.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">2</div><div class="resource-info"><strong>W3Schools HTML/CSS/JS <span class="rtag free">FREE</span></strong><span>w3schools.com — reference for every tag, property, method. Use "Try it" editor. Best for quick lookup and practicing snippets.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">3</div><div class="resource-info"><strong>CodePen.io — Free HTML/CSS/JS Playground <span class="rtag free">FREE</span></strong><span>codepen.io — write HTML, CSS, JS in browser, see result instantly. No installation. Perfect for building practical projects.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">4</div><div class="resource-info"><strong>freeCodeCamp Responsive Web Design <span class="rtag free">FREE</span></strong><span>freecodecamp.org — structured free course with hands-on projects. 10–15 hours here will make you exam-ready.</span></div></li>
+  </ul>
+  <div class="tips-box">
+    <h4>⚡ Practical — Build These 2 Pages (Covers 90% of Lab)</h4>
+    <ul>
+      <li><strong>Page 1:</strong> Personal profile page — heading, paragraph, image, unordered list of skills, ordered list of hobbies, table of marks, mailto link, all styled with CSS (colors, fonts, flex layout)</li>
+      <li><strong>Page 2:</strong> Registration form — text, email, password, number, radio (gender), checkbox (interests), dropdown (city), submit button — with JS validation on submit</li>
+      <li>Add: hover effects on buttons, responsive design with 1 media query</li>
+      <li>Know the Box Model diagram — draw it in every CSS theory answer</li>
+      <li>GET vs POST method in forms — CCSU favourite comparison question</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== COMPETITIVE ===== -->
+<div class="tab-panel" id="panel-comp">
+  <div class="comp-banner">
+    <h2>🏆 Competitive Exam — Smart Overlap Strategy</h2>
+    <p>Use your college syllabus to fuel competitive prep. Study once, benefit twice.</p>
+    <div class="comp-tags">
+      <span class="comp-tag">Dual Benefit Topics</span>
+      <span class="comp-tag">Time Management</span>
+      <span class="comp-tag">Free Resources</span>
+    </div>
+  </div>
+
+  <h3 class="sh">🔄 College Topics That Directly Help Competitive Exam</h3>
+  <div class="strat-grid">
+    <div class="strat-card">
+      <h3>📊 Probability & Stats</h3>
+      <ul>
+        <li>Mean, Median, Mode, SD → Quantitative Aptitude</li>
+        <li>Probability problems → Quant section of most exams</li>
+        <li>Correlation & Regression → Data Interpretation</li>
+        <li><strong>Study college Stats = Study Competitive Quant</strong></li>
+      </ul>
+    </div>
+    <div class="strat-card">
+      <h3>🗄 DBMS & SQL</h3>
+      <ul>
+        <li>SQL queries → SSC CGL IT, Bank IT Officer, NIC</li>
+        <li>DBMS concepts → GATE CS preparation base</li>
+        <li>Normalization → Govt IT exams (NIELIT, DRDO)</li>
+        <li>ACID, Transaction → IT Officer exams</li>
+      </ul>
+    </div>
+    <div class="strat-card">
+      <h3>🌐 Web Basics</h3>
+      <ul>
+        <li>HTTP/HTTPS, GET/POST → Computer Awareness MCQs</li>
+        <li>HTML tags → IT competitive paper questions</li>
+        <li>Client-server architecture → networking questions</li>
+      </ul>
+    </div>
+    <div class="strat-card">
+      <h3>🐍 Python</h3>
+      <ul>
+        <li>Python syntax MCQs → NIELIT, DRDO, ISRO Sci Asst</li>
+        <li>Data structures (list, dict) → programming MCQs</li>
+        <li>OOP concepts → IT competitive theory questions</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sh">📚 Top Free Competitive Resources</h3>
+  <ul class="resource-list">
+    <li class="resource-item"><div class="resource-rank">1</div><div class="resource-info"><strong>Testbook.com — Free Mock Tests <span class="rtag free">FREE</span></strong><span>testbook.com — free mock tests, subject-wise quizzes, PYQ papers for most Govt exams. Best for CCSU zone students.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">2</div><div class="resource-info"><strong>Adda247 App — Hindi Medium <span class="rtag free">FREE</span></strong><span>Free tier of Adda247 app — daily quizzes, current affairs, video lessons in Hindi. Covers Reasoning, Quant, GK.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">3</div><div class="resource-info"><strong>GeeksforGeeks CS Subjects <span class="rtag free">FREE</span></strong><span>geeksforgeeks.org — DBMS, OS, Networking, DS/Algo MCQs for competitive exams. Practice quiz section.</span></div></li>
+    <li class="resource-item"><div class="resource-rank">4</div><div class="resource-info"><strong>Study IQ / Let's Learn — YouTube <span class="rtag yt">YouTube</span><span class="rtag free">FREE</span></strong><span>GK and Current Affairs in Hindi. Watch daily 15-min current affairs for exam awareness.</span></div></li>
+  </ul>
+  <div class="tips-box">
+    <h4>⚡ Balancing Both Preps</h4>
+    <ul>
+      <li><strong>Never skip competitive prep day</strong> — keep 2.5 hours minimum daily, even during college exam season</li>
+      <li>Morning session (fresh brain) = Competitive Reasoning & Quant</li>
+      <li>Saturday/Sunday afternoon = Full-length competitive mock test (3 hours)</li>
+      <li>Your DBMS notes = DBMS notes for IT competitive — reuse them, don't rewrite</li>
+      <li>During college exam week, reduce competitive to 1 hour/day — don't stop completely</li>
+      <li>After college exams end → go full throttle on competitive prep</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function toggleUnit(head) {
+  const unit = head.parentElement;
+  unit.classList.toggle('open');
+}
+</script>
+
+</body></html>
